@@ -55,10 +55,11 @@ Create the project in a new folder (default `~/Websites/<brand-slug>`; ask only 
 npx create-next-app@latest <brand-slug> --ts --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm --yes
 cd <brand-slug>
 npx shadcn@latest init -d
-npm install motion lucide-react
+npm install motion lucide-react tw-animate-css
 ```
 
-- Static site: set `output: "export"` and `images: { unoptimized: true }` in `next.config.ts`, so `npm run build` gives a plain `out/` folder that runs on any host.
+- Static site: **add** `output: "export"` and `images: { unoptimized: true }` to the existing `next.config.ts`. Keep every key that is already there (newer Next.js versions load Tailwind through a `turbopack` rule in that file; replacing the file breaks all styling). Remove only `cacheComponents` and `partialPrefetching` if present: they don't work with a static export ("PPR cannot be enabled in export mode"). Then `npm run build` gives a plain `out/` folder that runs on any host.
+- If the build says `Can't resolve 'tw-animate-css'` or another CSS import, install that package and build again.
 - Put the design tokens from Step 2 into `src/app/globals.css` (CSS variables, light + dark) and load the fonts with `next/font/google`.
 - `lang="de"` on `<html>` for German sites. Real `<title>` and meta description.
 

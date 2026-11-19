@@ -46,10 +46,10 @@ export function Reveal({ children, delay = 0, className }: { children: React.Rea
 
 ```tsx
 "use client";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 
-const container = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
-const item = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } };
+const container: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
+const item: Variants = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } };
 
 export function Stagger({ children, className }: { children: React.ReactNode; className?: string }) {
   const reduce = useReducedMotion();
