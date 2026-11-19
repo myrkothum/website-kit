@@ -1,8 +1,10 @@
 {
   "name": "website-kit",
-  "owner": { "name": "Myrko Thum" },
+  "owner": {
+    "name": "Myrko Thum"
+  },
   "metadata": {
-    "description": "Website-Kit für Coaches: Claude Fable + UI UX Pro Max + 21st.dev-Hero + Framer Motion in einem Plugin.",
+    "description": "Website-Kit für Coaches: Claude Fable + UI UX Pro Max + Taste Skill + 21st.dev-Hero + Framer Motion.",
     "version": "1.0.0"
   },
   "plugins": [
@@ -11,9 +13,26 @@
       "source": "./",
       "description": "Claude baut dir eine Website, die nicht nach KI aussieht: Design-System mit UI UX Pro Max, Hero von 21st.dev, Animationen mit Framer Motion.",
       "version": "1.0.0",
-      "author": { "name": "Myrko Thum" },
+      "author": {
+        "name": "Myrko Thum"
+      },
       "category": "design",
       "strict": false
+    },
+    {
+      "name": "taste-skill",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Leonxlnx/taste-skill.git",
+        "sha": "f6b76575f949707b4e3c37cd86cb44b0b98643e8"
+      },
+      "description": "Taste Skill von Leonxlnx (MIT): Claude holt sich Inspiration bei den besten Websites und baut keine 08/15-Seiten. Original, unverändert, direkt aus dem Repo des Autors.",
+      "homepage": "https://github.com/Leonxlnx/taste-skill",
+      "license": "MIT",
+      "author": {
+        "name": "leonxlnx"
+      },
+      "category": "design"
     }
   ]
 }

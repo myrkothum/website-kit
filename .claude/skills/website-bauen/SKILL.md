@@ -1,6 +1,6 @@
 ---
 name: website-bauen
-description: Builds a complete, agency-quality website or landing page for a coach, consultant or small business in four steps — best model (Claude Fable), design system from the UI UX Pro Max skill, a hero section from 21st.dev, section animations with Framer Motion. Use when the user says "bau mir eine Website", "Website bauen", "Landingpage", "neue Webseite", "Website-Kit", "build me a website", or pastes their old website and wants a better one.
+description: Builds a complete, agency-quality website or landing page for a coach, consultant or small business — best model (Claude Fable), design system from the UI UX Pro Max skill, art direction from the Taste Skill, a hero section from 21st.dev, section animations with Framer Motion. Use when the user says "bau mir eine Website", "Website bauen", "Landingpage", "neue Webseite", "Website-Kit", "build me a website", or pastes their old website and wants a better one.
 ---
 
 # Website bauen (Website-Kit)
@@ -9,12 +9,16 @@ You build a real, modern website the user can open in the browser, change and pu
 The user is usually a coach, consultant or expert, **not a developer**. Talk to them in their
 language (default: German, informal "du"), short sentences, no jargon. You do the technical work.
 
-The kit has four building blocks. Use all four, in this order:
+The kit has five building blocks. Use all of them, in this order:
 
 1. **Model:** Claude Fable.
-2. **Design:** skill `ui-ux-pro-max` (by nextlevelbuilder, MIT) — design system, colors, fonts, layout rules.
-3. **Hero:** skill `hero-21st` — a hero section from 21st.dev.
-4. **Motion:** skill `framer-motion-abschnitte` — section animations with Framer Motion (package `motion`).
+2. **Design system:** skill `ui-ux-pro-max` (by nextlevelbuilder, MIT): colors, fonts, layout rules.
+3. **Taste:** skill `design-taste-frontend` from the Taste Skill plugin (by Leonxlnx, MIT): art direction from the best company sites, anti-template rules, browser check at the end.
+4. **Hero:** skill `hero-21st`: a hero section from 21st.dev.
+5. **Motion:** skill `framer-motion-abschnitte`: section animations with Framer Motion (package `motion`).
+
+If the Taste Skill is not installed (`design-taste-frontend` missing), tell the user once to run
+`claude plugin install taste-skill@website-kit`, then continue without it.
 
 ## Step 0 · Model check (one line)
 
@@ -46,6 +50,15 @@ python3 "<ui-ux-pro-max skill dir>/scripts/search.py" "coaching landing page <ni
 (Inside the plugin the skill dir is `${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max`. If that variable is empty, find the folder with `find ~/.claude -type d -name ui-ux-pro-max`.)
 If the user gave brand colors, they win over the suggested palette; keep the rest (type scale, spacing, anti-patterns).
 Show the user the result in 3 lines (style, colors, fonts) and go on unless they object.
+
+## Step 2b · Taste (Taste Skill)
+
+Invoke `design-taste-frontend`. Apply its house rules and its layout and copy references on top of
+the design system: one section per screen, equal edges, real photos and real product visuals instead of
+stock icons, plain copy. The user's brand colors and the ui-ux-pro-max tokens still win on color and type.
+It needs Node 22+ and Chrome/Edge/Chromium for its checker; if they are missing, use its rules without the checker.
+Where the Taste Skill and this flow disagree on the stack, keep this flow's Next.js setup (Step 3) and
+use the Taste Skill for direction, sections and the final gate.
 
 ## Step 3 · Project setup
 
@@ -86,7 +99,7 @@ Always respect `prefers-reduced-motion`.
 ## Step 7 · Check and show
 
 1. `npm run dev`, open the page (use the browser/preview tool if you have one), check desktop and 375 px mobile.
-2. Run the ui-ux-pro-max pre-delivery checklist (contrast 4.5:1, focus rings, no horizontal scroll, touch targets 44 px, alt texts).
+2. Run the Taste Skill checker/gate if available, and the ui-ux-pro-max pre-delivery checklist (contrast 4.5:1, focus rings, no horizontal scroll, touch targets 44 px, alt texts).
 3. `npm run build` must pass with zero errors.
 4. Tell the user in 5 lines max: where the site is, how to open it (`npm run dev` → http://localhost:3000), the placeholder list, and the next step.
 
