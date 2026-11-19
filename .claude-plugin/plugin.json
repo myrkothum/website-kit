@@ -1,0 +1,10 @@
+{
+  "name": "website-kit",
+  "description": "Website-Kit für Coaches: Claude baut dir eine Website, die nicht nach KI aussieht. Vier Bausteine: Claude Fable, der Design-Skill UI UX Pro Max (nextlevelbuilder, MIT), ein Hero-Bereich von 21st.dev und Framer Motion für die Animationen.",
+  "version": "1.0.0",
+  "author": { "name": "Myrko Thum", "url": "https://www.myrkothum.com/library/website/" },
+  "homepage": "https://github.com/myrkothum/website-kit",
+  "license": "MIT",
+  "keywords": ["website", "landingpage", "coaches", "design", "21st.dev", "framer-motion", "ui-ux-pro-max"],
+  "skills": "./.claude/skills/"
+}

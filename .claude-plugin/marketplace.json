@@ -1,0 +1,19 @@
+{
+  "name": "website-kit",
+  "owner": { "name": "Myrko Thum" },
+  "metadata": {
+    "description": "Website-Kit für Coaches: Claude Fable + UI UX Pro Max + 21st.dev-Hero + Framer Motion in einem Plugin.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "website-kit",
+      "source": "./",
+      "description": "Claude baut dir eine Website, die nicht nach KI aussieht: Design-System mit UI UX Pro Max, Hero von 21st.dev, Animationen mit Framer Motion.",
+      "version": "1.0.0",
+      "author": { "name": "Myrko Thum" },
+      "category": "design",
+      "strict": false
+    }
+  ]
+}
