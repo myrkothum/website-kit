@@ -1,6 +1,6 @@
 # Website-Kit für Claude
 
-Claude baut dir eine Website, die aussieht wie von einer Agentur. Vier Bausteine in einem Paket:
+Claude baut dir eine Website, die aussieht wie von einer Agentur. Vier Bausteine in einem Claude-Plugin:
 
 1. **Claude Fable** als Modell
 2. **UI UX Pro Max**, ein Design-Skill, damit die Seite nicht nach KI aussieht ([nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), MIT)
